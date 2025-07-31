@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Teachers</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <h1>Teacher Management</h1>
+    <nav><a href="dashboard.html">Back</a></nav>
+  </header>
+
+  <main class="content">
+    <button onclick="openModal('teacher')">Add Teacher</button>
+    <input type="text" id="searchTeacher" onkeyup="filterList('teacher')" placeholder="Search teacher..." />
+
+    <table id="teachersTable">
+      <thead>
+        <tr><th>ID</th><th>Name</th><th>Subject</th><th>Action</th></tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </main>
+
+  <!-- Modal -->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span onclick="closeModal()">×</span>
+      <h3>Add/Edit Teacher</h3>
+      <form id="teacherForm">
+        <input type="hidden" id="teacherId" />
+        <input type="text" id="teacherName" placeholder="Name" required />
+        <input type="text" id="teacherSubject" placeholder="Subject" required />
+        <button type="submit">Save</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="../js/script.js"></script>
+</body>
+</html>
